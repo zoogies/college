@@ -1,0 +1,3 @@
+place 5 blocks down in a horizontal row
+move up on top of previous row and back to the starting point
+repeat previous steps 3 more times
