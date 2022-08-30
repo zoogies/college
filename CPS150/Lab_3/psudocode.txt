@@ -1,3 +1,8 @@
-place 5 blocks down in a horizontal row
-move up on top of previous row and back to the starting point
-repeat previous steps 3 more times
+input number of rows(r)
+input number of blocks per row(b)
+repeat r times:
+	repeat b times:
+		place block down
+		move to the right
+	move up a row and back to the left starting position
+done
