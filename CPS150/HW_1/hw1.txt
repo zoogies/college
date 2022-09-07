@@ -1,3 +1,53 @@
+1. in: yearly interest, principle, monthly withdrawal. out: years until depleted
+
+2. solve for years until account depleted given yearly interest principle and monthly withdrawal
+ 
+3. counter set to 0. repeat til evaluates to 0 or negative: yearly interest/12 * balance - monthly withdrawal + balance. counter+. return counter
+
+4.	counter set 0
+	account balance set to initial input
+	repeat while account balance greater than 0:
+		account balance set to yearly interest/12 * account balance - monthly withdrawal + account balance
+		counter increment one	
+	return counter
+
+5. other inputs: number of meals bought at regular price so far, target for a free meal
+
+6.	counter set 0
+	account balance set 10,000
+	yearly interest set .06
+	while account balance greater than 0:
+		account balance set to yearly interest/12 * account balance - monthly withdrawal + account balance
+	return counter/12
+
+7. changed.
+
+8.	set SA ( length * height * 2 ) + ( width * height * 2 )
+	for num doors:
+		SA -= doorWidth * doorHeight
+	for num windows:
+		SA -= windowWidth * windowHeight
+
+9.	turn on computer
+	open file explorer twice
+	navigate to Documents/Homework on one file explorer
+	navigate to Documents/HW_backup/ on the other file explorer
+	on the first file explorer, drag and select every file, then drag them to the middle of the other file explorer
+	wait for a moment
+	verify that the green progress bar popup has ended
+	done
+
+10.	set close enough = .1
+	set in = input
+	set a = in
+	set g = 1
+	while a - g > close enough:
+		a = (a+y)/2
+		g = in / a
+	return g
+
 11. 39 + 3 \n 42
+
 12. HelloWorld \n
+
 13. No suitible method found for println(String,String)
