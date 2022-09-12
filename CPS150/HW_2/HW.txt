@@ -1,0 +1,48 @@
+int dpw = 7;
+int dte = 100;
+float cii = 2.54f;
+float tallest = 182.88f;
+
+-1
+
+you cannot declare two variables of the same name.
+
+double s = s + (v*t) + .5*g*math.pow(t,2);
+double fv = p*math.pow(1+(int/100),yrs);
+double g = (4*math.pow(math.PI,2))*(math.pow(a,3)/math.pow(p,2)*(mo + mt));
+double c = math.sqrt(math.pow(a,2)+math.pow(b,2)-(2*a*b*math.cos(y));
+
+dm = m * √(1+(v/c)) / √(1-(v/c)) - 1
+volume = Πr^2h
+volume = 4Π^3/3
+z = √(x^2y^2)
+
+8
+1
+17
+17.5
+17
+18
+
+8.0 	| 3 | 0 | 2
+9.0	| 3 | 1 | 1
+0.125 	| 2 | 0 | 2
+0.111111| 3 |-1 | 1
+9.0 	| 2 |-1 |-1
+.1111111|-2 | 1 |-1
+
+main has a semicolon instead of a curly brace
+colon inside of print statement
+print statement missing semicolon
+printline is not a System.out method
+in is not an existing std library or imported library
+
+system.in is quoted
+x is overwritten
+readint is not appropriate
+
+it has the extra decimal places because float division in programming langauges has quirks. I would reccomend wrapping the result in a round function.
+
+System.out.println(3*math.pow(1000,3));
+System.out.println(3.0*math.pow(1000,3));
+outputs -1294967296 and 3.0E9. the first result is an int overflow to the max negative value as the result was too large to store in an int. the float is stored in scientific notation which is why it is printed as such
