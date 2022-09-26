@@ -1,0 +1,40 @@
+a) 10
+b) e
+c) llo
+d) HelloWorld
+e) WorldHello
+
+r2.16) 
+print word substring 0,1
+print word substring length-1, length
+print word substring length/2, length/2+1
+
+r2.17)
+get name
+print name split index 1 at ' ' substring 0,1 + index 2 substring 0,1 + index 3 0,1
+
+r2.22)
+SunMonTueWedThuFriSat
+123456789............
+Sun
+123
+
+r2.23)
+Rodolfo
+1234567
+Rfdoo
+12345
+
+2.24)
+substring 0,1
+substring length-1,length
+substring without the character included and concat, same
+
+7.1)
+exception vs file created with 0 length
+
+7.2)
+file created with 0 length write protected, read only an exception is thrown
+
+7.3)
+miss the last buffer full of output, file will stay open til program exits
