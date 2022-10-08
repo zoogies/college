@@ -1,0 +1,63 @@
+1:
+true
+false
+false
+false
+true
+false
+false
+
+2:
+39.0
+400.0
+92.0
+62.0
+0.0
+
+3:
+an argument is a passed parameter for a function and a return value is a value returned from the function
+many
+many (inside lists/arrays)
+
+4:
+true  | true
+false | true
+true  | false
+true  | false
+true  | false
+true  | false
+
+5:
+this is true
+
+6:
+they are using english vocabulary where as not and or are represented by symbols in java.
+
+7:
+false
+true
+true
+true
+false
+false
+false
+true
+
+8:
+b
+!b
+!b
+b
+
+9:
+ n	| b	|
+ ----------------
+ 0	| true	| 
+ !0	| false	|
+-----------------
+ 0	| false	|
+ !0	| true	|
+-----------------
+ n<1	| true	|
+ n=1	| false	|
+ n>1	| true	|
