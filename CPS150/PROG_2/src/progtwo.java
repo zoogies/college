@@ -7,32 +7,121 @@ public class progtwo {
 	// init scanner
 	static Scanner sc = new Scanner(System.in);
 	// func for getting coords
+	public static Boolean testnegative(int input) {
+		if(input > 0) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
 	public static int getCoordinate(String prompt) {
 		System.out.print(prompt);
-		return sc.nextInt();
+		int temp = sc.nextInt();
+		if(testnegative(temp)) {
+			System.out.println("Input cannot be negative");
+			System.exit(1);
+		}
+		return temp;
 	}
 	// calc side length func
 	public static double calcSideLength(int x1, int y1, int x2, int y2) {
+		if(testnegative(x1)) {
+			System.out.println("point cannot be negative");
+			System.exit(1);
+		}
+		if(testnegative(y1)) {
+			System.out.println("point cannot be negative");
+			System.exit(1);
+		}
+		if(testnegative(x2)) {
+			System.out.println("point cannot be negative");
+			System.exit(1);
+		}
+		if(testnegative(y2)) {
+			System.out.println("point cannot be negative");
+			System.exit(1);
+		}
 		return Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2));
 	}
 	// calc alpha angle func
 	public static double calcAlphaAngle(double a, double b, double c) {
+		if(testnegative((int)a)) {
+			System.out.println("side length cannot be negative");
+			System.exit(1);
+		}
+		if(testnegative((int)b)) {
+			System.out.println("side length cannot be negative");
+			System.exit(1);
+		}
+		if(testnegative((int)c)) {
+			System.out.println("side length cannot be negative");
+			System.exit(1);
+		}
 		return Math.toDegrees(Math.acos((Math.pow(b, 2)+Math.pow(c, 2)-Math.pow(a, 2))/(2.0*b*c)));
 	}
 	// calc beta angle func
 	public static double calcBetaAngle(double a, double b, double c) {
+		if(testnegative((int)a)) {
+			System.out.println("side length cannot be negative");
+			System.exit(1);
+		}
+		if(testnegative((int)b)) {
+			System.out.println("side length cannot be negative");
+			System.exit(1);
+		}
+		if(testnegative((int)c)) {
+			System.out.println("side length cannot be negative");
+			System.exit(1);
+		}
 		return Math.toDegrees(Math.acos((Math.pow(a, 2)+Math.pow(c, 2)-Math.pow(b, 2))/(2.0*a*c)));
 	}
 	// calc gamma angle func
 	public static double calcGammaAngle(double a, double b, double c) {
+		if(testnegative((int)a)) {
+			System.out.println("side length cannot be negative");
+			System.exit(1);
+		}
+		if(testnegative((int)b)) {
+			System.out.println("side length cannot be negative");
+			System.exit(1);
+		}
+		if(testnegative((int)c)) {
+			System.out.println("side length cannot be negative");
+			System.exit(1);
+		}
 		return Math.toDegrees(Math.acos((Math.pow(a, 2)+Math.pow(b, 2)-Math.pow(c, 2))/(2.0*a*b)));
 	}
 	// calc perimeter func
 	public static double calcPerimeter(double side1, double side2, double side3) {
+		if(testnegative((int)side1)) {
+			System.out.println("side length cannot be negative");
+			System.exit(1);
+		}
+		if(testnegative((int)side2)) {
+			System.out.println("side length cannot be negative");
+			System.exit(1);
+		}
+		if(testnegative((int)side3)) {
+			System.out.println("side length cannot be negative");
+			System.exit(1);
+		}
 		return side1+side2+side3;
 	}
 	// calc area func
 	public static double calcArea(double a, double b, double c) {
+		if(testnegative((int)a)) {
+			System.out.println("side length cannot be negative");
+			System.exit(1);
+		}
+		if(testnegative((int)b)) {
+			System.out.println("side length cannot be negative");
+			System.exit(1);
+		}
+		if(testnegative((int)c)) {
+			System.out.println("side length cannot be negative");
+			System.exit(1);
+		}
 		double s = (a+b+c)/2.0;
 		return Math.sqrt( (s * (s-a))*(s-b)*(s-c) );
 	}
