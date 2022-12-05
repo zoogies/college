@@ -21,7 +21,7 @@ public class progsix {
 			s = new Scanner(new File(p));
 			lines.clear();
 			while (s.hasNextLine()){
-			    lines.add(s.nextLine());
+			    lines.add(s.nextLine()); 
 			}
 			s.close();
 			System.out.println("File opened successfully");
