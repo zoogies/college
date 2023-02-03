@@ -4,7 +4,8 @@ public class icao2 {
     final static Random rand = new Random();
     final static int MAX_SIZE = 10;	// amount of storage for the intList
     static int size = 0;            // number of values actually in the intList
-    static int[] intList = new int[MAX_SIZE];
+    static int[] intListICA03
+    = new int[MAX_SIZE];
 
     /**
      * @param args the command line arguments
