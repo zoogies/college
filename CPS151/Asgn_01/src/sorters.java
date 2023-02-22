@@ -97,58 +97,72 @@ public class sorters {
 
 	    } // end method
 
-	    // optimized bubble sort as described in the handout
-	    private static int bubbleSort(int[] arr) {
-	        int compCount = 0;  // comparison counter
-	        // declare any other variables you need
-
-	        // TODO: implement optimized bubble sort as described in handout
-
-	        return compCount;
-	    } // end bubbleSort
-
-	    // sorts an array of integers (shell function for public use)
-	    public static int mergeSort(final int[] arr) {
-	        return mergeSort(arr, 0, arr.length - 1);
-	    } // end public sort
-
-	    // sort the segment arr[low:high], its length is (high - low + 1)
-	    private static int mergeSort(final int[] arr, final int low, final int high) {
-	        int compCount = 0;  // counts number of comparisons made
-
-	        // Base case: a segment of length <= 1 is sorted by definition
-	        if (high - low <= 0) {
-	            return compCount;
+	    void merge(int arr[], int l, int m, int r)
+	    {
+	        // Find sizes of two subarrays to be merged
+	        int n1 = m - l + 1;
+	        int n2 = r - m;
+	  
+	        /* Create temp arrays */
+	        int L[] = new int[n1];
+	        int R[] = new int[n2];
+	  
+	        /*Copy data to temp arrays*/
+	        for (int i = 0; i < n1; ++i)
+	            L[i] = arr[l + i];
+	        for (int j = 0; j < n2; ++j)
+	            R[j] = arr[m + 1 + j];
+	  
+	        /* Merge the temp arrays */
+	  
+	        // Initial indexes of first and second subarrays
+	        int i = 0, j = 0;
+	  
+	        // Initial index of merged subarray array
+	        int k = l;
+	        while (i < n1 && j < n2) {
+	            if (L[i] <= R[j]) {
+	                arr[k] = L[i];
+	                i++;
+	            }
+	            else {
+	                arr[k] = R[j];
+	                j++;
+	            }
+	            k++;
 	        }
-
-	        // Recursive case: segment length > 1
-	        // Consider arr[low:high] split into arr[low:mid] and arr[mid+1:high]
-	        // and sort them recursively where mid = (low + high) / 2
-	        // Also add up the comparison counts from sorting the two sublists
-
-	        // merge arr[low:mid] and arr[mid+1:high] into arr[low:high]
-	        // add comparison count to the total above
-
-	        // return the accumulated count
-	        return compCount;
-	    } // end private sort
-
-	    private static int merge(final int[] arr, final int low, final int high) {
-	        // array segment arr[low:high] contains two sorted subsegments 
-	        // arr[low:mid] and arr[mid+1:high] where mid = (low + high)/2
-	        int compCount = 0;  // counts number of comparisons made
-	        // TODO: declare other variables you need
-	        
-	        // TODO: code the merge process, increment the comparison counter
-	        // while both segments have values to be processed
-	        
-	        // TODO: handle the left over values from one segment, this process
-	        // does not contribute to the comparison count
-	        
-	        // TODO: copy back from the merged segment to arr[low:high]
-	        
-	        return compCount;
-	    } // end merge
+	  
+	        /* Copy remaining elements of L[] if any */
+	        while (i < n1) {
+	            arr[k] = L[i];
+	            i++;
+	            k++;
+	        }
+	  
+	        /* Copy remaining elements of R[] if any */
+	        while (j < n2) {
+	            arr[k] = R[j];
+	            j++;
+	            k++;
+	        }
+	    }
+	  
+	    // Main function that sorts arr[l..r] using
+	    // merge()
+	    void sort(int arr[], int l, int r)
+	    {
+	        if (l < r) {
+	            // Find the middle point
+	            int m = l + (r - l) / 2;
+	  
+	            // Sort first and second halves
+	            sort(arr, l, m);
+	            sort(arr, m + 1, r);
+	  
+	            // Merge the sorted halves
+	            merge(arr, l, m, r);
+	        }
+	    }
 
 	    // utility method, loads random integer values in an array
 	    // the caller is responsible for allocating storage for the array
