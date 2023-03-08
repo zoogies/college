@@ -15,6 +15,7 @@ public class progtwo {
 			return true;
 		}
 	}
+	
 	public static int getCoordinate(String prompt) {
 		System.out.print(prompt);
 		int temp = sc.nextInt();
