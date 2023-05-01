@@ -98,11 +98,12 @@ public class finalproject {
 
 	private static void find(SLND<String> theList) {
 		System.out.print("Find in "+theList.name+": ");
-		if(theList.find(cin.nextLine())) {
-			System.out.println("Item found in list!");
+		String l = cin.nextLine();
+		if(theList.find(l)) {
+			System.out.println(l+" found in "+theList.name);
 		}
 		else {
-			System.out.println("Item not found in list!");
+			System.out.println(l+" not found in "+theList.name);
 		}
 	} // end method
 
