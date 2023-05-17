@@ -35,7 +35,7 @@ int main() {
         int input;
         printf("%02d ? ",instruction);
         scanf("%d",&input);
-        if(input <= 9999 && input >= -9999){ // TODO: needs rewritten does not work for all cases (letters)
+        if(input <= 9999 && input >= -9999){ // TODO: needs rewritten does not work for all cases (letters). input validation is awful
             memory[instruction] = input;
         }
         else{
