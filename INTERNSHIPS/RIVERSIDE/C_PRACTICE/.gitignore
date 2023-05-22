@@ -1,3 +1,2 @@
-*/build
-concepts/*/build
-projects/simpletron/build
+# ignore every build folder, no matter where
+**/build
