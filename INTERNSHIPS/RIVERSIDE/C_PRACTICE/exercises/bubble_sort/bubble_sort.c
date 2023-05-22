@@ -28,7 +28,7 @@ void bubbleSort(int arr[], int n){
 // method to print array visually
 void printArray(int arr[], int size){
     printf("["); // print the opening bracket
-    for(int i = 0; i < size; i++){
+    for(int i = 0; i < size - 1; i++){
         printf("%d,",arr[i]); // print the nth element of the array with a comma
     }
     printf("%d]\n",arr[size - 1]); // print the last element of the array without a comma and the end bracket
