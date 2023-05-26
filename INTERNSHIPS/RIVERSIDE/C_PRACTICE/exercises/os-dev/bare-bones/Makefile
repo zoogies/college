@@ -1,20 +1,35 @@
-all:
-	export PREFIX="$HOME/opt/cross"
-	export TARGET=i686-elf
-	export PATH="$PREFIX/bin:$PATH"
-	export PATH="$HOME/opt/cross/bin:$PATH"
-	
-	mkdir build
-	mkdir build/isodir
-	mkdir build/isodir/boot
-	mkdir build/isodir/boot/grub
+PREFIX := $(HOME)/opt/cross
+TARGET := i686-elf
+CC := $(TARGET)-gcc
+AS := $(TARGET)-as
+ISO := build/myos.iso
 
-	$TARGET-as boot.s -o ./build/boot.o
-	$TARGET-gcc -c kernel.c -o ./build/kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
-	$TARGET-gcc -T linker.ld -o ./build/isodir/boot/myos.bin -ffreestanding -O2 -nostdlib ./build/boot.o ./build/kernel.o -lgcc
+# Set the PATH variable
+export PATH := $(PREFIX)/bin:$(PATH)
+export PATH := $(HOME)/opt/cross/bin:$(PATH)
 
-iso:
-	grub-mkrescue -o ./build/myos.iso ./build/isodir
+# Default target
+all: $(ISO)
 
+# Compile assembly file
+build/boot.o: boot.s
+	$(AS) $< -o $@
+
+# Compile C file
+build/kernel.o: kernel.c
+	$(CC) -c $< -o $@ -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+
+# Link object files to create the final binary
+isodir/boot/myos.bin: build/boot.o build/kernel.o
+	$(CC) -T linker.ld -o $@ -ffreestanding -O2 -nostdlib $^ -lgcc
+
+# Create ISO image using GRUB
+$(ISO): isodir/boot/myos.bin
+	grub-mkrescue -o $@ isodir
+
+# Clean build directory
 clean:
-	rm -rf build
+	rm -rf build/*
+
+# PHONY targets
+.PHONY: all clean
